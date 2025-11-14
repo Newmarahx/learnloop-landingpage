@@ -1,65 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Learnloop – AI-Powered Peer Tutoring</title>
-<style>
-  body {font-family: system-ui, sans-serif; margin:0; color:#222; background:#fafafa;}
-  header {text-align:center; padding:4rem 1rem; background:#fff;}
-  h1 {font-size:2.5rem; margin-bottom:.5rem;}
-  p.lead {font-size:1.25rem; color:#555;}
-  section {max-width:800px; margin:0 auto; padding:2rem 1.5rem;}
-  h2 {text-align:center;}
-  ul {list-style:none; padding:0;}
-  li {margin:1rem 0; padding-left:1.2rem; position:relative;}
-  li::before {content:"✅"; position:absolute; left:0;}
-  .cta {text-align:center; margin-top:2rem;}
-  .btn {background:#2563eb; color:#fff; padding:.9rem 1.5rem; border:none;
-        border-radius:.5rem; font-size:1rem; cursor:pointer;}
-  .btn:hover {background:#1e40af;}
-  footer {text-align:center; padding:2rem; font-size:.9rem; color:#666;}
-</style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learnloop – AI-Powered Peer Tutoring</title>
+    <style>
+        :root {
+            --primary-color: #2563eb; /* Blue */
+            --primary-dark: #1e40af;
+            --text-dark: #1f2937; /* Dark Gray for main text */
+            --text-light: #4b5563; /* Medium Gray for lead/detail */
+            --background-light: #ffffff;
+            --background-grey: #f9fafb;
+            --border-radius: 0.75rem;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            margin: 0;
+            color: var(--text-dark);
+            background: var(--background-grey);
+            line-height: 1.6;
+        }
+
+        /* --- Typography --- */
+        h1 {
+            font-size: 3rem; /* Bigger for impact */
+            margin-bottom: 0.5rem;
+            line-height: 1.1;
+            font-weight: 800; /* Extra bold */
+        }
+
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+        }
+
+        p.lead {
+            font-size: 1.35rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0.5rem auto 2rem;
+        }
+
+        /* --- Header/Hero --- */
+        header {
+            text-align: center;
+            padding: 6rem 1rem 8rem; /* More vertical space */
+            background: var(--background-light);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        /* --- Buttons --- */
+        .btn {
+            background: var(--primary-color);
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: background 0.3s ease;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+        }
+
+        .btn:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 6px 16px rgba(30, 64, 175, 0.3);
+        }
+        
+        /* --- Sections & Layout --- */
+        section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem; /* Generous padding */
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            text-align: left;
+        }
+        
+        .feature-item {
+            background: var(--background-light);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-item h3 {
+            font-size: 1.25rem;
+            color: var(--primary-color);
+            margin-top: 0;
+        }
+
+        .feature-item p {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-top: 1px solid #e5e7eb;
+            background: var(--background-light);
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>Learnloop</h1>
-  <p class="lead">AI-powered micro-learning and peer tutoring for A-Level STEM students.</p>
-  <a href="#signup" class="btn">Join the Waitlist</a>
+    <h1>Achieve A-Level Mastery. Smarter.</h1>
+    <p class="lead">Learnloop is the AI-powered solution that instantly connects A-Level STEM students to expert peer support, eliminating study friction.</p>
+    <a href="#signup" class="btn">Start Your Free AI Session</a>
 </header>
 
 <section>
-  <h2>How It Works</h2>
-  <ol>
-    <li><strong>Ask Loop AI</strong> – Get step-by-step explanations with diagrams.</li>
-    <li><strong>Take a 12-question quiz</strong> (4 easy / 4 medium / 4 hard).</li>
-    <li><strong>Score &lt; 70%?</strong> Instantly connect to a verified peer tutor for a 20-minute $5 session.</li>
-    <li><strong>Learn smarter</strong> – Loop auto-creates notes, quizzes, and progress tracking.</li>
-  </ol>
+    <h2>Your Study Friction, Solved.</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>1. AI Precision</h3>
+            <p><strong>Ask Loop AI</strong> for step-by-step breakdowns, complex concept summaries, and visual diagrams tailored to your curriculum.</p>
+        </div>
+        <div class="feature-item">
+            <h3>2. Mastery Check</h3>
+            <p>Validate your knowledge with adaptive micro-quizzes (4 easy, 4 medium, 4 hard). We find exactly what you missed.</p>
+        </div>
+        <div class="feature-item">
+            <h3>3. Peer Coaching</h3>
+            <p>Stuck? Instantly connect to a verified, high-scoring peer tutor for a focused 20-minute micro-session. **Only $5.**</p>
+        </div>
+        <div class="feature-item">
+            <h3>4. Progress Tracking</h3>
+            <p>Loop auto-generates structured notes, revisits quizzes, and tracks your progress toward specific grade targets.</p>
+        </div>
+    </div>
 </section>
 
 <section>
-  <h2>Why Students Love Learnloop</h2>
-  <ul>
-    <li>Pay only for the help you need</li>
-    <li>Instant, affordable support from real peers</li>
-    <li>Personalized notes and mastery tracking</li>
-    <li>$5 micro-sessions that actually fit your schedule</li>
-  </ul>
+    <h2>Why the Best Students Choose Learnloop</h2>
+    <div class="feature-grid">
+        <div class="feature-item">
+            <h3>Affordable Access</h3>
+            <p>Pay only $5 for highly focused, 20-minute micro-sessions—no expensive hourly commitments.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Instant Support</h3>
+            <p>Get help when you need it most. Connect with a verified tutor in minutes, not hours or days.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Personalized Mastery</h3>
+            <p>Leverage AI to create personalized notes, targeted revision quizzes, and clear progress roadmaps.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Student-Verified</h3>
+            <p>Learn from high-achieving peers who know the A-Level curriculum and exactly where students typically struggle.</p>
+        </div>
+    </div>
 </section>
 
-<section id="signup">
-  <h2>Be the First to Try Learnloop</h2>
-  <p style="text-align:center;">Join our early-access list to get demos and launch updates.</p>
-  <div class="cta">
-    <!-- Replace the link below with your Tally or Google Form -->
-    <iframe src="https://tally.so/r/your-form-id" width="100%" height="400" frameborder="0"></iframe>
-  </div>
+<section id="signup" style="background:var(--background-light); padding-top:6rem; padding-bottom:6rem; border-radius:var(--border-radius);">
+    <h2>Ready to Stop Cramming and Start Mastering?</h2>
+    <p class="lead" style="margin-bottom:3rem;">Join our exclusive early-access list to be the first to experience Learnloop and receive special beta invites.</p>
+    <div class="cta">
+        <iframe src="https://tally.so/r/your-form-id" width="100%" height="400" frameborder="0" style="max-width:500px; border-radius:var(--border-radius); border: 1px solid #e5e7eb;"></iframe>
+    </div>
 </section>
 
 <footer>
-  Built by students, for students – © 2025 Learnloop
+    <p>Built by a student, for students – © 2025 Learnloop</p>
+    <p style="margin-top:.5rem;"><a href="#" style="color:var(--text-light);">Privacy</a> | <a href="#" style="color:var(--text-light);">Terms</a></p>
 </footer>
 
 </body>
